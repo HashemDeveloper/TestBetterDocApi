@@ -1,6 +1,6 @@
 package com.project.testbetterdocapi.di
 
-import com.project.testbetterdocapi.view.HomePageFragment
+import com.project.testbetterdocapi.view.fragments.HomePageFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
