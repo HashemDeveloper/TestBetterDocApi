@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/doctor_list_image_view_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomVerticalGuidline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="@+id/leftVerticalGuidline"
+        app:layout_constraintTop_toTopOf="@+id/toHorizontalGuidline"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_person_black_24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftVerticalGuidline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/toHorizontalGuidline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightVerticalGuidLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomVerticalGuidline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/doctor_list_name_view_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="sans-serif"
+        android:inputType="text"
+        android:singleLine="true"
+        android:text="@string/doctor_name"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/doctor_list_image_view_id"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/doctor_list_bio_view_id"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:fontFamily="sans-serif"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:text="@string/doctors_bio"
+        android:textSize="12sp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toEndOf="@+id/doctor_list_image_view_id"
+        app:layout_constraintTop_toBottomOf="@id/doctor_list_name_view_id"
+        android:layout_marginStart="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

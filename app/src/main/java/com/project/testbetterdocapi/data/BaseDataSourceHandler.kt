@@ -11,15 +11,15 @@ open class BaseDataSourceHandler {
     protected suspend fun <T> getResult(call: suspend () -> Response<T>): ResultHandler<T> {
         try {
             val response: Response<T> = call()
-            if (response.isSuccessful) {
+            return if (response.isSuccessful) {
                 val body: T?= response.body()
-                return if (body != null) {
+                if (body != null) {
                     ResultHandler.success(body)
                 } else {
-                   ResultHandler.onError(null, "NetworkFailed because: ${response.code()}, ${response.body()}")
+                    ResultHandler.onError(null, "NetworkFailed because: ${response.code()}, ${response.body()}")
                 }
             } else {
-                return ResultHandler.onError(null, "NetworkFailed because: ${response.code()}, ${response.body()}")
+                ResultHandler.onError(null, "NetworkFailed because: ${response.code()}, ${response.body()}")
             }
         } catch (ex: Exception) {
             if (ex.localizedMessage != null) {
