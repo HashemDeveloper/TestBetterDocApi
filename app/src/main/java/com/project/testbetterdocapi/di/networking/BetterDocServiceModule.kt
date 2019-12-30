@@ -2,7 +2,7 @@ package com.project.testbetterdocapi.di.networking
 
 import android.util.Log
 import com.project.testbetterdocapi.BuildConfig
-import com.project.testbetterdocapi.data.BetterDocRemoteApi
+import com.project.testbetterdocapi.data.BetterDocRemoteServiceModule
 import dagger.Module
 import dagger.Provides
 import okhttp3.Call
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Named
 import javax.inject.Singleton
 
-@Module(includes = [BetterDocRemoteApi::class])
+@Module(includes = [BetterDocRemoteServiceModule::class])
 object BetterDocServiceModule {
     @Singleton
     @Provides

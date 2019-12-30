@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
-object BetterDocRemoteApi {
+object BetterDocRemoteServiceModule {
     @Singleton
     @Provides
     @JvmStatic
