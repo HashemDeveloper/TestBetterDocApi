@@ -53,7 +53,7 @@ class DoctorListAdapter constructor(private val context: Context): RecyclerView.
                 this.docNameView?.text = name
                 this.docBioView?.let {bioView ->
                     val description: String = if (it.bio.length > 100) {
-                        it.bio.substring(0, 50) + "..."
+                        it.bio.substring(0, 100) + "..."
                     } else {
                         it.bio
                     }

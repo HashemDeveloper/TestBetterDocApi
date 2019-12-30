@@ -10,10 +10,9 @@ import kotlinx.coroutines.Job
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
-class RemoteRepo @Inject constructor(): IRemoteApiHelper, CoroutineScope, BaseDataSourceHandler() {
+class RemoteRepo @Inject constructor(): IRemoteApiHelper, BaseDataSourceHandler() {
     @Inject
     lateinit var api: IBetterDocApi
-    private val job: Job = Job()
 
     override suspend fun searchDocByDiseaseKtx(
         searchType: String,
@@ -26,12 +25,5 @@ class RemoteRepo @Inject constructor(): IRemoteApiHelper, CoroutineScope, BaseDa
         return getResult {
             this.api.searchDocByDiseaseKtx(searchType, userKey, limit, location, disease, sort)
         }
-    }
-
-    override val coroutineContext: CoroutineContext
-        get() = this.job + Dispatchers.IO
-
-    companion object {
-       @JvmStatic private val TAG: String = RemoteRepo::class.java.canonicalName!!
     }
 }
