@@ -10,7 +10,7 @@ data class ResultHandler<out T>(val status: ResultStatus, val data: T?, val mess
         fun <T> success(data: T): ResultHandler<T> {
             return ResultHandler(ResultStatus.SUCCESS, data, null)
         }
-        fun <T> onError(data: T?= null, message: String?): ResultHandler<T> {
+        fun <T> onError(data: T?= null, message: String): ResultHandler<T> {
             return ResultHandler(ResultStatus.ERROR, data, message)
         }
         fun <T> onLoading(data: T?= null): ResultHandler<T> {

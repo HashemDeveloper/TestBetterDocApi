@@ -5,10 +5,11 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
+import retrofit2.http.Url
 
 interface IBetterDocApi {
     @Headers("Content-Type: application/json")
     @GET
-    suspend fun searchDocByDiseaseKtx(@Query("doctors?") searchType: String, @Query("user_key") userKey: String, @Query("limit")
+    suspend fun searchDocByDiseaseKtx(@Url searchType: String, @Query("user_key") userKey: String, @Query("limit")
     limit: Int, @Query("location") location: String, @Query("query") disease: String, @Query("sort") sort: String): Response<BetterDocSearchByDiseaseRes>
 }
