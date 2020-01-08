@@ -30,7 +30,7 @@ ext {
     lifeCycleExtensionVersion = "2.1.0"
     retrofitVersion = '2.7.0'
     gsonVersion = '2.7.0'
-    daggerVersion = "2.16"
+    daggerVersion = "2.23.2"
     glideVersion = '4.10.0'
     glideTransformationVersion = "3.3.0"
     kotlin_coroutines_version = "1.2.0-alpha"

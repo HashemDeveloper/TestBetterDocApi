@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RestrictTo
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +17,7 @@ class DoctorListAdapter constructor(private val context: Context): RecyclerView.
     private val data: MutableList<Profile> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        val view: View = LayoutInflater.from(this.context).inflate(R.layout.doctor_list_item_layout, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.doctor_list_item_layout, parent, false)
         return DoctorListViewHolder(view)
     }
 
@@ -35,6 +36,11 @@ class DoctorListAdapter constructor(private val context: Context): RecyclerView.
         this.data.clear()
         this.data.addAll(data)
         notifyDataSetChanged()
+    }
+
+    @RestrictTo(RestrictTo.Scope.TESTS)
+    fun getData(): List<Profile> {
+        return this.data
     }
 
     inner class DoctorListViewHolder constructor(private val view: View): BaseViewHolder<Profile>(view) {
